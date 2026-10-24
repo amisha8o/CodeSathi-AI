@@ -126,7 +126,8 @@ The main interface allows users to enter programming questions and interact with
 <!-- Save the screenshot inside the repository's screenshots folder -->
 
 <p align="center">
-  <img src="screenshots/home-page.png" alt="CodeSathi AI home page and chat interface" width="900" />
+  <img width="1467" height="911" alt="image" src="https://github.com/user-attachments/assets/de8eba80-713b-48b6-ad6d-46fb77f7ffa6" />
+
 </p>
 
 ### 2. AI-Generated Response
@@ -134,7 +135,8 @@ The main interface allows users to enter programming questions and interact with
 The assistant displays generated explanations with Markdown formatting and readable code blocks.
 
 <p align="center">
-  <img src="screenshots/ai-response.png" alt="CodeSathi AI generated programming response" width="900" />
+  <img width="1382" height="895" alt="image" src="https://github.com/user-attachments/assets/29ccf373-b277-44ff-aea3-c5ff56b41e1b" />
+
 </p>
 
 ### 3. Chat History & Conversation Management
@@ -142,7 +144,8 @@ The assistant displays generated explanations with Markdown formatting and reada
 Users can start new conversations, revisit saved chats, and delete conversations using the chat management features.
 
 <p align="center">
-  <img src="screenshots/chat-history.png" alt="CodeSathi AI chat history and conversation management" width="900" />
+  <img width="1030" height="887" alt="image" src="https://github.com/user-attachments/assets/0c979a8a-c98f-41a5-9694-b30ec4accfb1" />
+
 </p>
 
 > **Note:** The screenshots above are planned image paths. Add the actual screenshots to the `screenshots/` folder before publishing this section.
