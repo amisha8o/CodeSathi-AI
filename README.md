@@ -22,13 +22,26 @@
 ---
 
 ## 📌 Table of Contents
-
+- [Live Demo](#-live-demo)
 - [About the Project](#-about-the-project)
 - [Project Highlights](#-project-highlights)
 - [Technology Stack](#-technology-stack)
 - [Project Status](#-project-status)
 
 ---
+## 🌐 Live Demo
+
+**Try CodeSathi AI:** [Open Live Application](https://code-sathi-ai-kappa.vercel.app/)
+
+| Component | Status | URL |
+|---|---|---|
+| Frontend | Deployed on Vercel | [Open App](https://code-sathi-ai-kappa.vercel.app/) |
+| Backend | Deployed on Render | [Backend Server](https://codesathi-ai-backend-rqdp.onrender.com/) |
+| Backend Health Check | Healthy | [Check API Health](https://codesathi-ai-backend-rqdp.onrender.com/api/health) |
+
+The live application connects the React + Vite frontend to the Express backend, which uses the Google Gemini API to generate programming-related responses.
+
+> **Production status:** The frontend and backend have been deployed, and a live AI response has been successfully tested.
 
 ## 📖 About the Project
 
@@ -94,19 +107,22 @@ The project focuses on making coding assistance easier to access while demonstra
 
 ## 📊 Project Status
 
-- [x] React frontend implemented
-- [x] Express backend implemented
-- [x] Gemini AI integration tested locally
-- [x] Markdown and code formatting
-- [x] Browser-based chat history
-- [x] New Chat and chat deletion
-- [x] Backend health endpoint
-- [x] Production frontend build verified
-- [x] Code lint checks passed
-- [x] Initial source code pushed to GitHub
-- [ ] Add final application screenshots
-- [ ] Deploy frontend and backend publicly
-- [ ] Add the verified live demo URL
+- [x] React + Vite frontend implemented
+- [x] Express backend and REST API implemented
+- [x] Google Gemini AI integration working
+- [x] Markdown rendering and code syntax highlighting
+- [x] Browser-based chat history and conversation management
+- [x] New Chat and chat deletion features
+- [x] Backend health endpoint verified
+- [x] Frontend production build verified
+- [x] ESLint checks passed
+- [x] Frontend deployed on Vercel
+- [x] Backend deployed on Render
+- [x] Production CORS configuration completed
+- [x] Live AI response successfully tested
+
+**Current status:** Live full-stack AI application.
+
 
 ---
 
@@ -417,6 +433,22 @@ CodeSathi AI can be deployed using separate hosting services for the frontend an
 | Backend | Render | Node.js + Express |
 | AI Service | Google Gemini API | API key stored as an environment variable |
 
+### 🌍 Production URLs
+
+| Resource | URL |
+|---|---|
+| Live Application | https://code-sathi-ai-kappa.vercel.app/ |
+| Backend Root | https://codesathi-ai-backend-rqdp.onrender.com/ |
+| Backend Health Endpoint | https://codesathi-ai-backend-rqdp.onrender.com/api/health |
+| API Endpoint | https://codesathi-ai-backend-rqdp.onrender.com/api/ask |
+
+**Environment configuration**
+
+- Frontend: `VITE_API_URL` points to the deployed Render backend.
+- Backend: `CLIENT_ORIGIN` allows the deployed Vercel frontend.
+- Gemini API key: Stored in the backend environment configuration; it must not be exposed in frontend code or committed to GitHub.
+
+
 ### Frontend Deployment — Vercel
 
 1. Push the latest project changes to GitHub.
@@ -445,14 +477,15 @@ CodeSathi AI can be deployed using separate hosting services for the frontend an
 
 ### Production Checklist
 
-- [ ] Configure the production frontend API URL.
-- [ ] Configure backend CORS for the deployed frontend.
-- [ ] Store API keys securely in hosting environment variables.
-- [ ] Verify AI responses on the deployed application.
+- [x] Configure the production frontend API URL.
+- [x] Configure backend CORS for the deployed frontend.
+- [x] Store API keys securely in hosting environment variables.
+- [x] Verify AI responses on the deployed application.
 - [ ] Test chat history and other frontend features.
-- [ ] Add the verified live demo URL to this README.
 
-> **Note:** The live demo link will be added after deployment and testing are complete.
+**Deployment Status:** The frontend is deployed on Vercel and the backend is deployed on Render. A live AI response has been successfully tested.
+
+**Live Demo:** https://code-sathi-ai-kappa.vercel.app/
 
 ---
 
@@ -475,13 +508,13 @@ CodeSathi AI has been tested locally to verify its core functionality and develo
 
 ### Before Production Release
 
-- [ ] Test the deployed frontend and backend.
-- [ ] Verify production environment variables and CORS settings.
+- [x] Test the deployed frontend and backend.
+- [x] Verify production environment variables and CORS settings.
 - [ ] Test invalid inputs and API error handling.
-- [ ] Confirm that the Gemini API key is never exposed in frontend code.
-- [ ] Add the verified live demo URL.
+- [x] Confirm that the Gemini API key is never exposed in frontend code.
+- [x] Add the verified live demo URL.
 
-> **Testing note:** The checks above reflect local verification. Production deployment checks will be completed after the application is deployed.
+> **Testing note:** The frontend and backend are deployed, and a live AI response has been successfully tested. Additional error-handling checks may still be performed.
 
 ---
 
