@@ -147,10 +147,69 @@ Users can start new conversations, revisit saved chats, and delete conversations
   <img width="1030" height="887" alt="image" src="https://github.com/user-attachments/assets/0c979a8a-c98f-41a5-9694-b30ec4accfb1" />
 
 </p>
-
-> **Note:** The screenshots above are planned image paths. Add the actual screenshots to the `screenshots/` folder before publishing this section.
-
 ---
+---
+
+## 🏛️ System Architecture
+
+CodeSathi AI follows a client-server architecture in which the React frontend communicates with a Node.js/Express backend, and the backend integrates with Google's Gemini AI service.
+
+```text
+┌──────────────────────────┐
+│          User            │
+│  Enters a coding prompt  │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│     React + Vite UI      │
+│  Chat, history, display  │
+└────────────┬─────────────┘
+             │ HTTP Request
+             ▼
+┌──────────────────────────┐
+│     Express Backend      │
+│ Validation and API logic │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│      Gemini AI API       │
+│  Generates AI response   │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│  Backend returns answer  │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│   Frontend renders text  │
+│  Markdown and code blocks│
+└──────────────────────────┘
+```
+
+### 🔄 How It Works
+
+1. **Prompt Input:** The user enters a programming question in the chat interface.
+2. **Frontend Validation:** The application checks that the question is not empty before sending a request.
+3. **API Request:** The frontend sends the question to the Express backend.
+4. **Backend Processing:** The backend validates the incoming request and applies configured rate limits.
+5. **AI Integration:** The backend sends the request to Gemini using the server-side API key.
+6. **Response Handling:** The backend processes the result and returns a response to the frontend.
+7. **Answer Display:** The frontend renders the answer with Markdown formatting and readable code snippets.
+8. **Conversation Management:** Chat history can be saved and managed in browser storage.
+
+### 🔐 Security Considerations
+
+- The Gemini API key is configured on the backend using environment variables.
+- API requests are validated before processing.
+- Rate limiting helps restrict repeated requests to the AI endpoint.
+- CORS configuration controls which frontend origin can access the backend.
+- Environment files and dependency directories are excluded from Git using `.gitignore`.
+
+
 
 
 
