@@ -209,6 +209,203 @@ CodeSathi AI follows a client-server architecture in which the React frontend co
 - CORS configuration controls which frontend origin can access the backend.
 - Environment files and dependency directories are excluded from Git using `.gitignore`.
 
+---
+
+## ⚙️ Installation & Local Setup
+
+Follow these steps to download, configure, and run CodeSathi AI on your local machine.
+
+### 📋 Prerequisites
+
+Before starting, make sure you have:
+
+- [Node.js](https://nodejs.org/) installed.
+- npm (included with Node.js).
+- Git installed.
+- A Google Gemini API key for AI response generation.
+
+### 1️⃣ Clone the Repository
+
+Open a terminal and run:
+
+```bash
+git clone https://github.com/amisha8o/CodeSathi-AI.git
+cd CodeSathi-AI
+```
+
+### 2️⃣ Install Backend Dependencies
+
+Navigate to the server directory:
+
+```bash
+cd server
+npm install
+```
+
+### 3️⃣ Configure Environment Variables
+
+Create a `.env` file inside the `server` directory.
+
+Add the following configuration:
+
+```env
+GEMINI_API_KEY=your_gemini_api_key
+CLIENT_ORIGIN=http://localhost:5173
+PORT=5000
+```
+
+Replace `your_gemini_api_key` with your own Gemini API key.
+
+**Important:** Never publish your actual API key or commit the `.env` file to GitHub.
+
+### 4️⃣ Start the Backend Server
+
+From the `server` directory, use the start command configured in `server/package.json`.
+
+For example, if the package defines a `start` script:
+
+```bash
+npm start
+```
+
+Keep this terminal running.
+
+### 5️⃣ Install Frontend Dependencies
+
+Open a second terminal and navigate to the frontend directory from the project root:
+
+```bash
+cd client
+npm install
+```
+
+### 6️⃣ Start the Frontend
+
+Run the Vite development server:
+
+```bash
+npm run dev
+```
+
+Open the local URL printed in the terminal. The default Vite development address is usually:
+
+```text
+http://localhost:5173
+```
+
+### 7️⃣ Verify the Backend
+
+With the backend running, open:
+
+```text
+http://localhost:5000/api/health
+```
+
+A healthy server should return a successful response indicating that the CodeSathi AI backend is running.
+
+### ✅ Troubleshooting
+
+| Problem | What to check |
+|---|---|
+| Backend connection error | Confirm the backend server is running on port `5000`. |
+| AI request fails | Verify the Gemini API key and API availability. |
+| CORS error | Check that `CLIENT_ORIGIN` matches the frontend origin. |
+| Missing dependencies | Run `npm install` in the relevant `client` or `server` directory. |
+| Environment variable not found | Confirm the `.env` file is inside `server` and restart the backend. |
+
+---
+
+## 🔌 API Documentation
+
+CodeSathi AI uses a backend REST API to process programming questions and communicate with the Gemini AI service.
+
+### Base URL
+
+**Local development:**
+
+```text
+http://localhost:5000
+```
+
+### API Endpoints
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| `GET` | `/` | Check the backend root route. |
+| `GET` | `/api/health` | Check backend health. |
+| `POST` | `/api/ask` | Submit a programming question and receive an AI-generated response. |
+
+### 1. Health Check
+
+**Request**
+
+```http
+GET /api/health
+```
+
+**Purpose:** Verifies that the backend server is running.
+
+### 2. Ask a Programming Question
+
+**Request**
+
+```http
+POST /api/ask
+Content-Type: application/json
+```
+
+**Example request body**
+
+```json
+{
+  "question": "Explain binary search in Java with an example."
+}
+```
+
+The backend validates the request, communicates with the Gemini AI service, and returns the generated answer according to the API response format.
+
+> **Note:** The exact response fields depend on the implementation in `server/server.js`. Refer to the source code for the definitive response schema.
+
+### ⚠️ Error Handling
+
+The backend is designed to handle invalid input and AI service failures.
+
+Potential error scenarios include:
+
+- Empty or invalid programming questions.
+- Questions that exceed the configured length limit.
+- Requests exceeding the rate limit.
+- Gemini API quota or authentication errors.
+- Temporary AI service availability issues.
+- Network or server errors.
+
+The frontend should display an understandable error message when a request fails, rather than leaving the user without feedback.
+
+---
+
+## 🛡️ Security & Reliability
+
+Security and reliability are important parts of the CodeSathi AI architecture.
+
+- **Environment Variables:** Store the Gemini API key in the backend `.env` file.
+- **Input Validation:** Reject invalid or empty questions.
+- **Request Size Limit:** Restrict the size of incoming JSON requests.
+- **Rate Limiting:** Limit repeated requests to the AI endpoint.
+- **CORS Configuration:** Configure allowed frontend origins.
+- **Error Handling:** Handle AI service failures and return appropriate error responses.
+- **Secret Exclusion:** Use `.gitignore` to prevent environment files and dependency folders from being committed.
+
+### Security Best Practices
+
+1. Never expose the Gemini API key in frontend JavaScript.
+2. Never commit `.env` files to the public repository.
+3. Use environment variables for production configuration.
+4. Configure CORS with the deployed frontend's exact origin.
+5. Monitor API usage and configure suitable limits for public access.
+
+
+
+
 
 
 
