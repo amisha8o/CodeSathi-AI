@@ -403,6 +403,56 @@ Security and reliability are important parts of the CodeSathi AI architecture.
 4. Configure CORS with the deployed frontend's exact origin.
 5. Monitor API usage and configure suitable limits for public access.
 
+---
+
+## 🚀 Deployment Guide
+
+CodeSathi AI can be deployed using separate hosting services for the frontend and backend.
+
+### Recommended Deployment Platforms
+
+| Component | Platform | Configuration |
+|---|---|---|
+| Frontend | Vercel | React + Vite |
+| Backend | Render | Node.js + Express |
+| AI Service | Google Gemini API | API key stored as an environment variable |
+
+### Frontend Deployment — Vercel
+
+1. Push the latest project changes to GitHub.
+2. Import the `CodeSathi-AI` repository into Vercel.
+3. Set the **Root Directory** to `client`.
+4. Configure the build command as `npm run build`.
+5. Set the output directory to `dist`.
+6. Configure the production API URL using the environment variable `VITE_API_URL`.
+7. Deploy the application after configuring the backend URL.
+
+### Backend Deployment — Render
+
+1. Create a new Web Service and connect the GitHub repository.
+2. Set the **Root Directory** to `server`.
+3. Configure the build command as `npm install`.
+4. Set the start command according to the backend's `package.json`.
+5. Add the required environment variables:
+
+| Variable | Purpose |
+|---|---|
+| `GEMINI_API_KEY` | Google Gemini API key |
+| `CLIENT_ORIGIN` | Deployed frontend URL |
+| `PORT` | Port configuration supported by the hosting platform |
+
+6. Deploy the backend and verify its health endpoint.
+
+### Production Checklist
+
+- [ ] Configure the production frontend API URL.
+- [ ] Configure backend CORS for the deployed frontend.
+- [ ] Store API keys securely in hosting environment variables.
+- [ ] Verify AI responses on the deployed application.
+- [ ] Test chat history and other frontend features.
+- [ ] Add the verified live demo URL to this README.
+
+> **Note:** The live demo link will be added after deployment and testing are complete.
 
 
 
