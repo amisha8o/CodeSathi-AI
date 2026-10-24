@@ -454,8 +454,77 @@ CodeSathi AI can be deployed using separate hosting services for the frontend an
 
 > **Note:** The live demo link will be added after deployment and testing are complete.
 
+---
 
+## 🧪 Testing & Quality Checks
 
+CodeSathi AI has been tested locally to verify its core functionality and development workflow.
+
+### Verification Checklist
+
+- [x] Frontend runs locally using Vite.
+- [x] Backend runs locally using Express.
+- [x] Gemini API integration tested successfully.
+- [x] AI responses display in the application.
+- [x] Markdown and code syntax highlighting work.
+- [x] Chat history is stored in the browser.
+- [x] New Chat and chat deletion features work.
+- [x] Backend health endpoint responds successfully.
+- [x] Frontend production build completes successfully.
+- [x] ESLint checks pass without warnings or errors.
+
+### Before Production Release
+
+- [ ] Test the deployed frontend and backend.
+- [ ] Verify production environment variables and CORS settings.
+- [ ] Test invalid inputs and API error handling.
+- [ ] Confirm that the Gemini API key is never exposed in frontend code.
+- [ ] Add the verified live demo URL.
+
+> **Testing note:** The checks above reflect local verification. Production deployment checks will be completed after the application is deployed.
+
+---
+
+## 📁 Project Structure
+
+```text
+CodeSathi-AI/
+├── client/                 # React + Vite frontend
+│   ├── public/             # Static assets
+│   ├── src/                # React application source
+│   ├── package.json        # Frontend dependencies and scripts
+│   └── vite.config.js      # Vite configuration
+│
+├── server/                 # Node.js + Express backend
+│   ├── server.js           # Backend entry point (if named server.js)
+│   ├── package.json        # Backend dependencies and scripts
+│   └── .env                # Local environment variables (not committed)
+│
+├── .gitignore
+└── README.md
+```
+
+> **Note:** The tree is illustrative. Actual files and folders may vary depending on the current repository structure.
+
+## 🔮 Future Improvements
+
+- Add streaming responses for a more interactive AI experience.
+- Support multiple programming languages and code explanations.
+- Improve error messages and loading indicators.
+- Add secure server-side conversation persistence.
+- Introduce automated tests for frontend and backend functionality.
+- Add a publicly accessible live demo after deployment.
+
+## 👩‍💻 Author
+
+**Amisha Kumari**
+
+- GitHub: [@amisha8o](https://github.com/amisha8o)
+- Project Repository: [CodeSathi AI](https://github.com/amisha8o/CodeSathi-AI)
+
+---
+
+*Built to make programming concepts easier to understand with AI.*
 
 
 
